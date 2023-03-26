@@ -1,0 +1,44 @@
+LINUX CUSTOM ISO:
+
+If you're a linux admin ,you have to install os for multiple computer ,you have to configure that computer for first installing procedure .
+Now its take lots of time .
+Main point is i'm creating minimal os from full os because i have a low end pc so i create this minimal os .
+1. now add one repository (sudo apt-add-repository ppa:cubic-wizard/release)
+2. update my system and install cubic package (sudo apt update -y && sudo apt install cubic)
+Our motive in this note is :
+1. Removal of unnecessary packages, making it a minimal ISO of Linux Mint.
+2. Update remaining packages to the latest version.
+3. Add new background images.
+4. Install the latest Linux Kernel (6.0). latest version is 6.2
+Now i'm going to purge thunderbird
+using : apt purge thunderbird
+And i'm going to purge some more packages
+(apt purge drawing gnome-calculator hexchat hypnotix libreoffice* onboard redshift redshift-gtk rhythmbox sticky thingy thunderbird warpinator webapp-manager)
+
+Now update this and upgrade this modification
+(sudo apt update && sudo apt upgrade)
+
+Add few more background images :
+goto this dir "cd /usr/share/backgrounds"
+Open your images and drag and drop here now its update this images into this background images
+Cubic appliaction support drag and drop option so i do that.
+
+Now kernel updating section:
+download these 4 links using wget :
+1.wget https://kernel.ubuntu.com/~kernel-ppa/mainline/v6.0/amd64/linux-headers-6.0.0-060000_6.0.0-060000.202210022231_all.deb
+2.wget https://kernel.ubuntu.com/~kernel-ppa/mainline/v6.0/amd64/linux-headers-6.0.0-060000-generic_6.0.0-060000.202210022231_amd64.deb
+3.wget https://kernel.ubuntu.com/~kernel-ppa/mainline/v6.0/amd64/linux-image-unsigned-6.0.0-060000-generic_6.0.0-060000.202210022231_amd64.deb
+4.wget https://kernel.ubuntu.com/~kernel-ppa/mainline/v6.0/amd64/linux-modules-6.0.0-060000-generic_6.0.0-060000.202210022231_amd64.deb
+because its contains kernel and its header file so doenload this one by one finally install all file using 
+#dpkg -i *.deb
+
+Next prompt also showing package removing prompt if you want to remove more package you can
+Next  select kernel version and click next
+Now compression area :
+I'm goint with gzip, it's avarage compression size 
+After click Generate button Now its take some time
+
+After complete this entire step cubic have test environmet you can test this iso with tset area .
+this is a custom iso creating steps.
+
+This was my take on how you can easily create custom Ubuntu or other Linux distros ISO images using Cubic with its practical usage.
